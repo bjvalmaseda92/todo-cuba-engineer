@@ -1,1 +1,2 @@
-Install bladeui-heroicons
+-Create livewire component for todos
+- Install fontawesome-free
