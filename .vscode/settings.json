@@ -1,3 +1,3 @@
 {
-  "conventionalCommits.scopes": ["todos"]
+  "conventionalCommits.scopes": ["todos", "ui"]
 }
