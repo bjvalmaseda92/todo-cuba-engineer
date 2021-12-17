@@ -23,7 +23,7 @@
                 @else
                 <li>
                     <div class="inline-flex items-center">
-                        <input type="checkbox" class="form-checkbox h-4 w-4" checked>
+                        <input type="checkbox" class="form-checkbox h-4 w-4">
                         <span class="ml-2 cursor-pointer" wire:click="selectEdit({{$todo}})">{{$todo->title}}</span>
                     </div>
                 </li>

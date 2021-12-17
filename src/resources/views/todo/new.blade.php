@@ -12,34 +12,19 @@
         </div>
         <div class="border p-2 border-gray-200 bg-gray-50">
             <div class="flex py-3">
-                <a href="" class="flex border rounded px-3 py-1 bg-gray-200 text-gray-400 mr-6">
-                    <x-heroicon-o-arrows-expand class="w-6 h-6 mr-1" />
-                    <span>Open</span>
-                </a>
-                <a href="" class="flex border rounded px-3 py-1 text-gray-400 mr-2">
-                    <x-heroicon-o-calendar class="w-6 h-6 mr-1" />
-                    <span>Today</span>
-                </a>
-                <a href="" class="flex border rounded px-3 py-1 text-gray-400 mr-2">
-                    <x-heroicon-o-lock-open class="w-6 h-6 mr-1" />
-                    <span>Public</span>
-                </a>
-                <a href="" class="flex border rounded px-3 py-1 text-gray-400 mr-2">
-                    <x-heroicon-o-sparkles class="w-6 h-6 mr-1" />
-                    <span>Highlight</span>
-                </a>
-                <a href="" class="flex border rounded px-3 py-1 text-gray-400 mr-2">
-                    <x-heroicon-o-stop class="w-6 h-6 mr-1" />
-                    <span>Estimation</span>
-                </a>
+                @include('todo.action-button') {{-- botones de accion --}}
                 <div class="ml-auto flex">
                     <span class="flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
-                        wire:click="cancelEdit">
+                        wire:click="cancelNewTodo">
                         Cancel
                     </span>
-                    <button type="submit" class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">
-                        Add
-                    </button>
+                    @if ($newTitle!="")
+                    <button type="submit"
+                        class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">Add</button>
+                    @else
+                    <span class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500 cursor-pointer"
+                        wire:click="cancelNewTodo">Ok</span>
+                    @endif
                 </div>
             </div>
         </div>
