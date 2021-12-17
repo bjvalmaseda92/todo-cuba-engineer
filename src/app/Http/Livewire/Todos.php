@@ -4,10 +4,13 @@ namespace App\Http\Livewire;
 
 use App\Models\Todo;
 use Livewire\Component;
+use phpDocumentor\Reflection\Types\Boolean;
+use PhpParser\Node\Expr\FuncCall;
 
 class Todos extends Component
 {
-    public $title;
+    public $newTitle;
+    public $new = false;
     public $todos;
     public ?Todo $editing;
     public $editingTitle;
@@ -17,16 +20,30 @@ class Todos extends Component
         $this->todos = Todo::all();
     }
 
+    public function newTodo()
+    {
+        $this->new = true;
+    }
+
+    public function cancelNewTodo()
+    {
+        $this->newTitle = "";
+        $this->new = false;
+    }
+
     public function addTodo()
     {
-        $this->validate(["title" => "required"]);
-        $todo = Todo::create(["title" => $this->title, "user_id" => 1]);
+        $this->validate(["newTitle" => "required"]);
+
+        $todo = Todo::create(["title" => $this->newTitle, "user_id" => 1]);
         $this->todos->push($todo);
-        $this->title = "";
+        $this->todos = Todo::all();
+        $this->cancelNewTodo();
     }
 
     public function selectEdit(Todo $todo)
     {
+        $this->cancelNewTodo();
         $this->editing = $todo;
         $this->editingTitle = $todo->title;
     }
@@ -35,14 +52,14 @@ class Todos extends Component
     {
         $this->editingTitle = "";
         $this->editing = null;
+        $this->cancelNewTodo();
     }
 
     public function updateTodo()
     {
         $this->editing->update(["title" => $this->editingTitle]);
-        $this->editingTitle = "";
-        $this->editing = null;
         $this->todos = Todo::all();
+        $this->cancelEdit();
     }
 
     public function render()

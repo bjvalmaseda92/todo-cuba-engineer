@@ -1,14 +1,17 @@
 <div class="shadow-md">
     <div class="border p-2 border-gray-200">
         @if (!isset($editing))
-        <div class="flex">
+        @if ($new)
+        @include('todo.new')
+        @else
+        <div class="flex" wire:click="newTodo">
             <x-heroicon-o-plus-circle class="w-6 h-6 text-blue-500 " />
-            <input type="text" placeholder="Type to add new task" class="focus:outline-none ml-2 w-5/6"
-                wire:model.lazy="title">
+            <span class="ml-2 text-gray-400">Type to add new task</span>
             <div class="avatar ml-auto">
                 <img src="{{ asset('avatar.webp') }}" alt="avatar" class="rounded-full w-6">
             </div>
         </div>
+        @endif
         @endif
         <div class="p-2 mt-2 grid-flow-row">
             <ul>
