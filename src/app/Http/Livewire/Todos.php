@@ -14,6 +14,7 @@ class Todos extends Component
     public $todos;
     public ?Todo $editing;
     public $editingTitle;
+    public $isEdited = false;
 
     public function mount()
     {
@@ -29,6 +30,7 @@ class Todos extends Component
     {
         $this->newTitle = "";
         $this->new = false;
+        $this->isEdited = false;
     }
 
     public function addTodo()
@@ -65,5 +67,10 @@ class Todos extends Component
     public function render()
     {
         return view("livewire.todos");
+    }
+
+    public function updatedEditingTitle($name, $value)
+    {
+        $this->isEdited = true;
     }
 }

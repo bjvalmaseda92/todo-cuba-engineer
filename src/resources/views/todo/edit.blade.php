@@ -39,7 +39,19 @@
                         <span>Cancel</span>
                     </span>
                     <button type="submit" class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">
-                        Save
+                        <span class="hidden xl:block">
+                            Save
+                        </span>
+                        @if ($isEdited)
+                        <span class="xl:hidden">
+                            <i class="fas fa-save"></i>
+                        </span>
+                        @else
+                        <span class="xl:hidden">
+                            X
+                        </span>
+                        @endif
+
                     </button>
                 </div>
             </div>
