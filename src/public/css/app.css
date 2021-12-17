@@ -5054,6 +5054,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .inline-flex {
   display: inline-flex;
 }
+.hidden {
+  display: none;
+}
 .h-6 {
   height: 1.5rem;
 }
@@ -5154,5 +5157,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .lg\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1230px) {
+
+  .xl\:visible {
+    visibility: visible;
+  }
+
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:flex {
+    display: flex;
+  }
+
+  .xl\:hidden {
+    display: none;
+  }
 }
 

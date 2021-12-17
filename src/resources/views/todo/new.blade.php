@@ -14,16 +14,28 @@
             <div class="flex py-3">
                 @include('todo.action-button') {{-- botones de accion --}}
                 <div class="ml-auto flex">
-                    <span class="flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
+                    <span
+                        class="hidden xl:flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
                         wire:click="cancelNewTodo">
                         Cancel
                     </span>
                     @if ($newTitle!="")
-                    <button type="submit"
-                        class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">Add</button>
+                    <button type="submit" class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">
+                        <span class="hidden xl:block">
+                            Add
+                        </span>
+                        <x-heroicon-o-plus-sm class="w-6 h-6 xl:hidden" />
+                    </button>
                     @else
                     <span class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500 cursor-pointer"
-                        wire:click="cancelNewTodo">Ok</span>
+                        wire:click="cancelNewTodo">
+                        <span class="hidden xl:block">
+                            Ok
+                        </span>
+                        <span class="xl:hidden">
+                            X
+                        </span>
+                    </span>
                     @endif
                 </div>
             </div>
