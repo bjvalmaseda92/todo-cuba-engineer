@@ -5159,29 +5159,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline-offset: 2px;
 }
 
-@media (min-width: 768px) {
-
-  .md\:block {
-    display: block;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-}
-
-@media (min-width: 1024px) {
-
-  .lg\:hidden {
-    display: none;
-  }
-}
-
 @media (min-width: 1230px) {
-
-  .xl\:visible {
-    visibility: visible;
-  }
 
   .xl\:block {
     display: block;
