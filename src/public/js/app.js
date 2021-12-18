@@ -5520,16 +5520,16 @@ window.formatHTML = function () {
     },
     //aux function
     formatTag: function formatTag(tag) {
-      return '<span class="rounded bg-violet-300 px-1 text-violet-800">' + tag + "</span>";
+      return '<a href="#"><span class="rounded bg-violet-300 px-1 text-violet-800">' + tag + "</span></a>";
     },
     formatEmail: function formatEmail(email) {
-      return '<span class="rounded bg-orange-300 px-1 text-orange-800">' + email + "</span>";
+      return '<a href="#"><span class="rounded bg-orange-300 px-1 text-orange-800">' + email + "</span></a>";
     },
     formatUser: function formatUser(user) {
-      return '<span class="rounded bg-green-300 px-1 text-green-800">' + user + "</span>";
+      return '<a href="#"><span class="rounded bg-green-300 px-1 text-green-800">' + user + "</span></a>";
     },
     formatLink: function formatLink(link) {
-      return '<span class="rounded bg-blue-300 px-1 text-blue-800">' + link + "</span>";
+      return '<a href="#"><span class="rounded bg-blue-300 px-1 text-blue-800">' + link + "</span></a>";
     }
   };
 };

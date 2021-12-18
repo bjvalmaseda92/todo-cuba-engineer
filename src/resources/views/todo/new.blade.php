@@ -6,7 +6,8 @@
 
                 <input type="text" placeholder="Type to add new task" class="focus:outline-none ml-2 w-5/6"
                     wire:model="newTitle">
-                <div class="avatar ml-auto">
+                <div
+                    class="avatar ml-auto @if($newTitle=="") opacity-60 cursor-not-allowed @else cursor-pointer @endif">
                     <img src="{{ asset('avatar.webp') }}" alt="avatar" class="rounded-full w-6">
                 </div>
             </div>
@@ -17,7 +18,7 @@
                 <div class="ml-auto flex">
                     <span
                         class="hidden xl:flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
-                        @click="isNew=false">
+                        @click="isNew=false, newTitle=''">
                         Cancel
                     </span>
                     @if ($newTitle!="")

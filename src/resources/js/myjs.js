@@ -29,32 +29,32 @@ window.formatHTML = function () {
         //aux function
         formatTag(tag) {
             return (
-                '<span class="rounded bg-violet-300 px-1 text-violet-800">' +
+                '<a href="#"><span class="rounded bg-violet-300 px-1 text-violet-800">' +
                 tag +
-                "</span>"
+                "</span></a>"
             );
         },
 
         formatEmail(email) {
             return (
-                '<span class="rounded bg-orange-300 px-1 text-orange-800">' +
+                '<a href="#"><span class="rounded bg-orange-300 px-1 text-orange-800">' +
                 email +
-                "</span>"
+                "</span></a>"
             );
         },
 
         formatUser(user) {
             return (
-                '<span class="rounded bg-green-300 px-1 text-green-800">' +
+                '<a href="#"><span class="rounded bg-green-300 px-1 text-green-800">' +
                 user +
-                "</span>"
+                "</span></a>"
             );
         },
         formatLink(link) {
             return (
-                '<span class="rounded bg-blue-300 px-1 text-blue-800">' +
+                '<a href="#"><span class="rounded bg-blue-300 px-1 text-blue-800">' +
                 link +
-                "</span>"
+                "</span></a>"
             );
         },
     };
