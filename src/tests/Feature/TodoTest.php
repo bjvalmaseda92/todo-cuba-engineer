@@ -57,7 +57,9 @@ class TodoTest extends TestCase
 
         Livewire::test(Todos::class)
             ->set("editingTitle", "foo")
-            ->set("editing", $todo)
-            ->call("updateTodo");
+            ->call("updateTodo", $todo);
+
+        $todo->refresh();
+        $this->assertEquals("foo", $todo->title);
     }
 }

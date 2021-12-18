@@ -1,4 +1,4 @@
-<form wire:submit.prevent="updateTodo">
+<form wire:submit.prevent="updateTodo({{$todo}})">
     <div class="shadow-md">
         <div class="border p-2 border-gray-200">
             <div class="flex">

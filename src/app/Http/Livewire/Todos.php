@@ -57,9 +57,9 @@ class Todos extends Component
         $this->cancelNewTodo();
     }
 
-    public function updateTodo()
+    public function updateTodo(Todo $todo)
     {
-        $this->editing->update(["title" => $this->editingTitle]);
+        $todo->update(["title" => $this->editingTitle]);
         $this->todos = Todo::all();
         $this->cancelEdit();
     }
