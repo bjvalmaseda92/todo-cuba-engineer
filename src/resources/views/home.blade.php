@@ -13,12 +13,10 @@
 </head>
 
 <body>
-    <div class="container mx-auto">
+    <div class="container mx-auto my-4">
         @livewire('todos')
     </div>
     @livewireScripts
-    {{-- <script src="{{ asset('js/myjs.js') }}"></script> --}}
-
 </body>
 
 </html>
