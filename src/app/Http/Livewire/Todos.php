@@ -10,7 +10,7 @@ use PhpParser\Node\Expr\FuncCall;
 class Todos extends Component
 {
     public $newTitle;
-    public $new = false;
+    public $isNew = false;
     public $todos;
     public ?Todo $editing;
     public $editingTitle;
@@ -23,13 +23,13 @@ class Todos extends Component
 
     public function newTodo()
     {
-        $this->new = true;
+        $this->isNew = true;
     }
 
     public function cancelNewTodo()
     {
-        $this->newTitle = "";
-        $this->new = false;
+        $this->newTitle = null;
+        $this->isNew = false;
         $this->isEdited = false;
     }
 

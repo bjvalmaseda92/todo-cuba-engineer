@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Alldone App</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
     @livewireStyles
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
 </head>
 
 <body>
@@ -16,6 +17,8 @@
         @livewire('todos')
     </div>
     @livewireScripts
+    {{-- <script src="{{ asset('js/myjs.js') }}"></script> --}}
+
 </body>
 
 </html>

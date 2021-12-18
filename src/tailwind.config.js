@@ -1,5 +1,9 @@
 module.exports = {
-    content: ["./resources/**/*.blade.php", "./resources/**/*.js"],
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./public/js/**/*.js",
+    ],
     theme: {
         screens: {
             sm: "640px",

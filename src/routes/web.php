@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", [TodoController::class, "index"])->name("home");
+
+Route::get("/test", function () {
+    return view("todo.test");
+});
