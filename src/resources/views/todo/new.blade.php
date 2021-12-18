@@ -3,8 +3,18 @@
         <div class="border p-2 border-gray-200">
             <div class="flex">
                 <x-heroicon-o-plus-circle class="w-6 h-6 text-blue-500 " />
-                <input type="text" placeholder="Type to add new task" class="focus:outline-none ml-2 w-5/6"
-                    wire:model="newTitle">
+
+
+                <div x-data="formatHTML(), {}">
+                    <div x-data="{ html: 'tex', real: 'asdsa'}" class="w-5/6">
+                        <div x-on:blur="html = formatText($event.target.innerHTML), real= html" contenteditable="true"
+                            x-html="real">
+                        </div>
+                    </div>
+                </div>
+
+                {{-- <input type="text" placeholder="Type to add new task" class="focus:outline-none ml-2 w-5/6"
+                    wire:model="newTitle"> --}}
                 <div class="avatar ml-auto">
                     <img src="{{ asset('avatar.webp') }}" alt="avatar" class="rounded-full w-6">
                 </div>
@@ -16,7 +26,7 @@
                 <div class="ml-auto flex">
                     <span
                         class="hidden xl:flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
-                        wire:click="cancelNewTodo">
+                        @click="isNew=false">
                         Cancel
                     </span>
                     @if ($newTitle!="")
@@ -28,7 +38,7 @@
                     </button>
                     @else
                     <span class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500 cursor-pointer"
-                        wire:click="cancelNewTodo">
+                        @click="isNew=false">
                         <span class="hidden xl:block">
                             Ok
                         </span>
