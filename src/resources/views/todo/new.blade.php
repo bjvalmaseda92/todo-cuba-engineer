@@ -23,8 +23,8 @@
                     </span>
                     @if ($newTitle!="")
                     <button type="submit"
-                        class="primary-button flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500" id=''>
-                        <span class=" hidden xl:block" id="">
+                        class="primary-button flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">
+                        <span class="add-button hidden xl:block">
                             Add
                         </span>
                         <x-heroicon-o-plus-sm class="w-6 h-6 xl:hidden" />

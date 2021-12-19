@@ -4,7 +4,7 @@
             <div class="flex">
                 <x-heroicon-o-plus-circle class="w-6 h-6 text-blue-500 " />
                 <input type="text" placeholder="Type to add new task" class="focus:outline-none ml-2 w-5/6"
-                    wire:model="editingTitle">
+                    wire:model="editingTitle" id="name">
                 <div class="avatar ml-auto">
                     <img src="{{ asset('avatar.webp') }}" alt="avatar" class="rounded-full w-6">
                 </div>
@@ -34,17 +34,18 @@
                 </a>
                 <div class="ml-auto flex">
                     <span
-                        class="hidden xl:flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
+                        class="secondary-button hidden xl:flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
                         wire:click="cancelEdit">
                         <span>Cancel</span>
                     </span>
-                    <button type="submit" class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">
-                        <span class="hidden xl:block">
+                    <button type="submit"
+                        class="primary-button flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500">
+                        <span class="hidden xl:block save-button">
                             Save
                         </span>
                         @if ($isEdited)
                         <span class="xl:hidden">
-                            <i class="fas fa-save"></i>
+                            <i class="fas fa-save save-button"></i>
                         </span>
                         @else
                         <span class="xl:hidden">

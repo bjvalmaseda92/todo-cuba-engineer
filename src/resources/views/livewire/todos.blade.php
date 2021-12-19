@@ -27,7 +27,7 @@
                 <li>
                     <div class="inline-flex items-center">
                         <input type="checkbox" class="form-checkbox h-4 w-4">
-                        <span class="ml-2 cursor-pointer" )" wire:click="selectEdit({{$todo}})"
+                        <span class="ml-2 cursor-pointer" wire:click="selectEdit({{$todo}})" id="todo-{{$todo->id}}"
                             x-html="formatText('{{$todo->title}}')"></span>
                     </div>
                 </li>
