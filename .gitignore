@@ -1,2 +1,3 @@
 notes.txt
-src/.env.dusk.loc
+src/.env.dusk.local
+.vscode/
