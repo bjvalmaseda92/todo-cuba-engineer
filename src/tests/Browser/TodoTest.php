@@ -60,4 +60,32 @@ class TodoTest extends DuskTestCase
                 ->assertDontSee("Ok");
         });
     }
+
+    public function test_tags_format_todo()
+    {
+        $todo = Todo::create([
+            "title" =>
+                "This a #todo test with test@email.test and www.link.tets and one @user",
+        ]);
+        $this->browse(function (Browser $browser) use ($todo) {
+            $browser->visit("/");
+            $tag = $browser->text(
+                "span.rounded.bg-violet-300.px-1.text-violet-800"
+            );
+            $user = $browser->text(
+                "span.rounded.bg-green-300.px-1.text-green-800"
+            );
+
+            $this->assertEquals("#todo", $tag);
+            $this->assertEquals("@user", $user);
+            $browser->assertSeeIn(
+                "span.rounded.bg-orange-300.px-1.text-orange-800",
+                "Mail"
+            );
+            $browser->assertSeeIn(
+                "span.rounded.bg-blue-300.px-1.text-blue-800",
+                "Link"
+            );
+        });
+    }
 }
