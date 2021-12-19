@@ -5523,13 +5523,13 @@ window.formatHTML = function () {
       return '<a href="#"><span class="rounded bg-violet-300 px-1 text-violet-800">' + tag + "</span></a>";
     },
     formatEmail: function formatEmail(email) {
-      return '<a href="#"><span class="rounded bg-orange-300 px-1 text-orange-800">' + email + "</span></a>";
+      return '<a href="#" title="' + email + '"><span class="rounded bg-orange-300 px-1 text-orange-800"><i class="far fa-envelope"></i> Mail</span></a>';
     },
     formatUser: function formatUser(user) {
       return '<a href="#"><span class="rounded bg-green-300 px-1 text-green-800">' + user + "</span></a>";
     },
     formatLink: function formatLink(link) {
-      return '<a href="#"><span class="rounded bg-blue-300 px-1 text-blue-800">' + link + "</span></a>";
+      return '<a href="#" title="' + link + '"><span class="rounded bg-blue-300 px-1 text-blue-800"><i class="fas fa-link"></i> Link</span></a>';
     }
   };
 };

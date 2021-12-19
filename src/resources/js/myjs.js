@@ -37,9 +37,9 @@ window.formatHTML = function () {
 
         formatEmail(email) {
             return (
-                '<a href="#"><span class="rounded bg-orange-300 px-1 text-orange-800">' +
+                '<a href="#" title="' +
                 email +
-                "</span></a>"
+                '"><span class="rounded bg-orange-300 px-1 text-orange-800"><i class="far fa-envelope"></i> Mail</span></a>'
             );
         },
 
@@ -52,9 +52,9 @@ window.formatHTML = function () {
         },
         formatLink(link) {
             return (
-                '<a href="#"><span class="rounded bg-blue-300 px-1 text-blue-800">' +
+                '<a href="#" title="' +
                 link +
-                "</span></a>"
+                '"><span class="rounded bg-blue-300 px-1 text-blue-800"><i class="fas fa-link"></i> Link</span></a>'
             );
         },
     };
