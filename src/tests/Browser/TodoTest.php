@@ -41,4 +41,23 @@ class TodoTest extends DuskTestCase
                 ->assertSee("foo");
         });
     }
+
+    public function test_responsive_button()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit("/");
+
+            //change device size and push new if we can't see the word Open or any button text its ok
+            $browser->resize(375, 812);
+            $browser
+                ->click("#new")
+                ->assertDontSee("Open")
+                ->assertDontSee("Today")
+                ->assertDontSee("Public")
+                ->assertDontSee("Highligh")
+                ->assertDontSee("Estimation")
+                ->assertDontSee("Cancel")
+                ->assertDontSee("Ok");
+        });
+    }
 }

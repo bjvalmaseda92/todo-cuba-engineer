@@ -17,7 +17,7 @@
 </a>
 <a href="" class="flex border rounded px-3 py-1 text-gray-500 mr-2 cursor-pointer">
     <x-heroicon-o-stop class="w-6 h-6 mr-1" />
-    <span>Estimation</span>
+    <span class="hidden xl:block">Estimation</span>
 </a>
 @else
 <a href="" class="flex border rounded px-3 py-1 bg-gray-200 text-gray-400 mr-6 cursor-not-allowed">
