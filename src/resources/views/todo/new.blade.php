@@ -17,19 +17,21 @@
                 @include('todo.action-button') {{-- botones de accion --}}
                 <div class="ml-auto flex">
                     <span
-                        class="hidden xl:flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
+                        class="secondary-button hidden xl:flex border rounded px-3 py-1 text-gray-600 mr-2 ml-auto bg-gray-200 cursor-pointer"
                         @click="isNew=false, newTitle=''">
                         Cancel
                     </span>
                     @if ($newTitle!="")
-                    <button type="submit" class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500" ">
-                        <span class=" hidden xl:block" id="button-add">
-                        Add
+                    <button type="submit"
+                        class="primary-button flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500" id=''>
+                        <span class=" hidden xl:block" id="">
+                            Add
                         </span>
                         <x-heroicon-o-plus-sm class="w-6 h-6 xl:hidden" />
                     </button>
                     @else
-                    <span class="flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500 cursor-pointer"
+                    <span
+                        class="primary-button flex border rounded px-3 py-1 text-white mr-2 ml-auto bg-blue-500 cursor-pointer"
                         @click="isNew=false">
                         <span class="hidden xl:block">
                             Ok
