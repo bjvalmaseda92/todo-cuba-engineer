@@ -10,9 +10,4 @@ class Todo extends Model
     use HasFactory;
 
     protected $guarded = [];
-
-    // public function __toString()
-    // {
-    //     return $this->title;
-    // }
 }

@@ -37,7 +37,7 @@ class Todos extends Component
     {
         $this->validate(["newTitle" => "required"]);
 
-        $todo = Todo::create(["title" => $this->newTitle, "user_id" => 1]);
+        $todo = Todo::create(["title" => $this->newTitle]);
         $this->todos->push($todo);
         $this->todos = Todo::all();
         $this->cancelNewTodo();
