@@ -6,7 +6,7 @@
             <div x-show='isNew'>
                 @include('todo.new')
             </div>
-            <div class="flex" @click="isNew=true" x-show="! isNew">
+            <div class="flex" @click="isNew=true" x-show="! isNew" id="new">
                 <x-heroicon-o-plus-circle class="w-6 h-6 text-blue-500 " />
                 <span class="ml-2 text-gray-400">Type to add new task</span>
                 <div class="avatar ml-auto opacity-60">
