@@ -6,7 +6,7 @@ This is an app only for the purpose of presenting a technical test for Cuba Engi
 
 Docker and Docker compose are used to generate the environment where the application will be running and Laravel as a development framework
 
-## **Istalation** ##
+## **Installation** ##
 
 To start using the app we must create the environment by running the following commands
 
