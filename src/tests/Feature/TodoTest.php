@@ -18,8 +18,6 @@ class TodoTest extends TestCase
     {
         $this->withExceptionHandling();
 
-        // $user = User::factory()->create(); create a fake user
-
         $response = $this->get("/");
 
         $response->assertStatus(200);
@@ -33,7 +31,6 @@ class TodoTest extends TestCase
 
     public function test_user_can_create_todo()
     {
-        $user = User::factory()->create();
         Livewire::test(Todos::class)
             ->set("newTitle", "foo")
             ->call("addTodo");
@@ -51,9 +48,7 @@ class TodoTest extends TestCase
 
     public function test_user_can_edit_todo()
     {
-        $user = User::factory()->create();
-
-        $todo = Todo::create(["title" => "bar", "user_id" => $user->id]);
+        $todo = Todo::factory()->create();
 
         Livewire::test(Todos::class)
             ->set("editingTitle", "foo")
