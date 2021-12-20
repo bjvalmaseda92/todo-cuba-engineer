@@ -36,10 +36,7 @@ services:
       - laravel
 
   php:
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
-    image: cubaengineer-phpimage
+    image: ghcr.io/bjvalmaseda92/laravel-devenv:v1.0 #my own image from Github Container
     container_name: php-cubaengineer
     restart: unless-stopped #
     volumes: # carpeta de proyecto local
