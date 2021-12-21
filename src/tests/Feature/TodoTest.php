@@ -32,6 +32,7 @@ class TodoTest extends TestCase
     public function test_user_can_create_todo()
     {
         Livewire::test(Todos::class)
+            ->call("newTodo")
             ->set("newTitle", "foo")
             ->call("addTodo");
 
@@ -51,6 +52,7 @@ class TodoTest extends TestCase
         $todo = Todo::factory()->create();
 
         Livewire::test(Todos::class)
+            ->call("selectEdit", $todo)
             ->set("editingTitle", "foo")
             ->call("updateTodo", $todo);
 

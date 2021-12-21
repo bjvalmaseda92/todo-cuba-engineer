@@ -36,11 +36,12 @@ class Todos extends Component
     public function addTodo()
     {
         $this->validate(["newTitle" => "required"]);
-
-        $todo = Todo::create(["title" => $this->newTitle]);
-        $this->todos->push($todo);
-        $this->todos = Todo::all();
-        $this->cancelNewTodo();
+        if ($this->isNew) {
+            $todo = Todo::create(["title" => $this->newTitle]);
+            $this->todos->push($todo);
+            $this->todos = Todo::all();
+            $this->cancelNewTodo();
+        }
     }
 
     public function selectEdit(Todo $todo)
@@ -59,9 +60,11 @@ class Todos extends Component
 
     public function updateTodo(Todo $todo)
     {
-        $todo->update(["title" => $this->editingTitle]);
-        $this->todos = Todo::all();
-        $this->cancelEdit();
+        if ($this->editing->is($todo)) {
+            $todo->update(["title" => $this->editingTitle]);
+            $this->todos = Todo::all();
+            $this->cancelEdit();
+        }
     }
 
     public function render()
