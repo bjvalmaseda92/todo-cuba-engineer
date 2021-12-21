@@ -1,6 +1,6 @@
-<div align="center">
+<div align="center" style="font-size: 32px">
 
-# **Todo Cuba Engineer** #
+ <b>Todo Cuba Engineer</b>
 
 </div>
 
@@ -9,6 +9,10 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/bjvalmaseda92/todo-cuba-engineer?logo=php) ![Codecov](https://img.shields.io/codecov/c/github/bjvalmaseda92/todo-cuba-engineer?logo=codecov&token=H7DYU7DCB0) ![Laravel](https://img.shields.io/badge/laravel-v8-orange)
 
 </div>
+
+- [**Description**](#description)
+- [**Installation**](#installation)
+- [**Test**](#test)
 
 ## **Description** ##
 
