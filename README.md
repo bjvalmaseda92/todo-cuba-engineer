@@ -36,7 +36,7 @@ To start using the app we must create the environment by running the following c
 
 5. Generate a key for your application
 
-        docker-compose exec php php artisan ke:generate
+        docker-compose exec php php artisan key:generate
 
 6. After that change the DB connection in to .env file a run the migrations
 
